@@ -47,7 +47,6 @@
                 <tr>
                     <th>ID</th>
                     <th>Nom Adhérant</th>
-                    <th>Type d'abonnement</th>
                     <th>Date de début</th>
                     <th>Date de fin</th>
                 </tr>
