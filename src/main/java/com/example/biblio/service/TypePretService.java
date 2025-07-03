@@ -31,6 +31,12 @@ public class TypePretService {
     public void deleteById(int id) {
         filmRepository.deleteById(id);
     }
+
+
+
+    public TypePret getById(long l) {
+        return null;
+    }
  
 }
 

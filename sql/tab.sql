@@ -43,6 +43,9 @@ CREATE TABLE type_adherant (
     id SERIAL PRIMARY KEY,
     nom VARCHAR(50) NOT NULL
 );
+alter table type_adherant add column delai int;
+
+
 
 -- Table adherant
 CREATE TABLE adherant (
@@ -83,8 +86,9 @@ CREATE TABLE pret (
     id_exemplaire INT REFERENCES exemplaire(id) ON DELETE CASCADE,
     id_type_pret INT REFERENCES type_pret(id) ON DELETE CASCADE
 );
-
+alter table pret add column date_debut_prevision TIMESTAMP;
 -- Table type_statut_pret
+
 CREATE TABLE type_statut_pret (
     id SERIAL PRIMARY KEY,
     nom VARCHAR(50)
