@@ -23,8 +23,17 @@ public class StatutPret {
     @Column(name = "date_fin")
     private LocalDateTime dateFin;
 
-    @Column(name = "id_pret")
-    private Long idPret;
+    @ManyToOne
+    @JoinColumn(name = "id_pret", nullable = false)
+    private Pret pret;
+    
+    public Pret getPret() {
+        return pret;
+    }
+
+    public void setPret(Pret pret) {
+        this.pret = pret;
+    }
 
     // Getters & Setters
     public Long getId() {
@@ -59,11 +68,5 @@ public class StatutPret {
         this.dateFin = dateFin;
     }
 
-    public Long getIdPret() {
-        return idPret;
-    }
 
-    public void setIdPret(Long idPret) {
-        this.idPret = idPret;
-    }
 }
