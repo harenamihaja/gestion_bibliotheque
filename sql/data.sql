@@ -25,6 +25,15 @@ INSERT INTO exemplaire (id_livre, date_achat) VALUES
 INSERT INTO type_adherant (nom) VALUES
 ('Etudiant'), ('Enseignant'), ('Externe');
 
+update type_adherant set delai = 10 where id =1;
+update type_adherant set delai = 14 where id =2;
+update type_adherant set delai = 7 where id =3;
+
+update type_adherant set capacite = 5 where id =1;
+update type_adherant set capacite = 7 where id =2;
+update type_adherant set capacite = 1 where id =3;
+
+
 -- Adherants
 INSERT INTO adherant (nom, id_type_adherant, date_naissance, adresse) VALUES
 ('Martin Dupont', 1, '2000-06-14', '123 rue Alpha'),

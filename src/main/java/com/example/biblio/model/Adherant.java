@@ -7,8 +7,11 @@ import java.time.LocalDate;
 public class Adherant {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "nom")
     private String nom;
+    @Column(name = "date_naissance")
     private LocalDate dateNaissance;
+    @Column(name = "adresse")
     private String adresse;
 
     @ManyToOne

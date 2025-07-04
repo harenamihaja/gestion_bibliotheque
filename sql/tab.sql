@@ -43,6 +43,13 @@ CREATE TABLE type_adherant (
     id SERIAL PRIMARY KEY,
     nom VARCHAR(50) NOT NULL
 );
+<<<<<<< Updated upstream
+=======
+alter table type_adherant add column delai int;
+ alter table type_adherant add column capacite int;
+
+
+>>>>>>> Stashed changes
 
 -- Table adherant
 CREATE TABLE adherant (

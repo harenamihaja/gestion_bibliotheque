@@ -10,4 +10,45 @@ public class TypeAdherant {
     private Long id;
 
     private String nom;
+<<<<<<< Updated upstream
+=======
+
+    @Column(name = "delai")
+    private int delai;
+    @Column(name = "capacite")
+    private int capacite;
+
+
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public void setCapacite(int capacite) {
+        this.capacite = capacite;
+    }
+
+    public int getDelai() {
+        return delai;
+    }
+
+    public void setDelai(int delai) {
+        this.delai = delai;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+>>>>>>> Stashed changes
 }
