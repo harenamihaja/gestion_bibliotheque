@@ -1,6 +1,8 @@
 package com.example.biblio.model;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -22,6 +24,17 @@ public class Pret {
     @ManyToOne
     @JoinColumn(name = "id_type_pret", nullable = false)
     private TypePret typePret;
+    
+    @Column(name = "date_debut_prevision")
+    private LocalDate date_debut_prevision;
+
+    public LocalDate getDate_debut_prevision() {
+        return date_debut_prevision;
+    }
+
+    public void setDate_debut_prevision(LocalDate date_debut_prevision) {
+        this.date_debut_prevision = date_debut_prevision;
+    }
 
     public Long getId() {
         return id;

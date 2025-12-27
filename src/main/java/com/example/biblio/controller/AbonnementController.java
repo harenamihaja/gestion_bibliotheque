@@ -73,19 +73,5 @@ public class AbonnementController {
         model.addAttribute("abonnements", abonnements);
         return "abonnements/active-abonnements";
     }
-    @GetMapping("/test")
-    public String listAbonnementsAll(Model model) {
-        List<Abonnement> abonnements = abonnementService.getAll();
-        System.out.println("Abonnements  recuperes depuis la vue :");
-        for (Abonnement ab : abonnements) {
-            System.out.println("ID: " + ab.getId() +
-                               ", Nom: " + ab.getAdherant() +
-                               ", Type: " + ab.getTypeAbonnement() +
-                               ", Début: " + ab.getDateDebut() +
-                               ", Fin: " + ab.getDateFin());
-        }
-      
-        model.addAttribute("abonnements", abonnements);
-        return "abonnements"; // nom du fichier JSP sans extension
-    }
+    
 }

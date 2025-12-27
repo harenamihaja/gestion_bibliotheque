@@ -1,5 +1,6 @@
 package com.example.biblio.repository;
 import com.example.biblio.model.Exemplaire;
+import com.example.biblio.model.Livre;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -28,4 +29,21 @@ public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer>
         @Param("dateDebut") LocalDate dateDebut,
         @Param("dateFin") LocalDate dateFin
     );
+    @Query(value = """
+        SELECT DISTINCT e.*
+        FROM exemplaire e
+        JOIN livre l ON e.id_livre = l.id
+        WHERE e.id NOT IN (
+            SELECT pret.id_exemplaire
+            FROM pret 
+            JOIN statut_pret ON pret.id = statut_pret.id_pret
+            JOIN type_statut_pret ON type_statut_pret.id = statut_pret.id_type_statut
+            WHERE 
+                type_statut_pret.nom IN ('En cours', 'Retarde')
+                AND CURRENT_DATE BETWEEN statut_pret.date_debut AND COALESCE(statut_pret.date_fin, CURRENT_DATE + INTERVAL '100 years')
+        )
+        """, nativeQuery = true)
+    List<Exemplaire> findAvailableExemplaires();
+
+    
 }

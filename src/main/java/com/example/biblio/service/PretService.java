@@ -26,6 +26,7 @@ public class PretService {
     public Pret getById(int id) {
         return filmRepository.findById(id).orElse(null);
     }
+    
     public void deleteById(int id) {
         filmRepository.deleteById(id);
     }
